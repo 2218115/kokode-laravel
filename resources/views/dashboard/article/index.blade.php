@@ -42,6 +42,7 @@
         
     <div style="display: flex; gap: 1rem;">
         <button class="button--brown" onclick="showModal()">Buat Artikel 📢</button>
+        <a href="/dashboard/articles/report" class="button button--outline-brown" type="submit" name="report"> Cetak Data Artikel</a>
     </div>
 
     <div class="dash__container">

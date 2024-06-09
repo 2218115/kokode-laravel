@@ -29,3 +29,4 @@ Route::get('/dashboard/articles', [ArticleController::class, 'index']);
 Route::post('/dashboard/articles/store', [ArticleController::class, 'store']);
 Route::delete('/dashboard/articles/destroy/{id}', [ArticleController::class, 'destroy']);
 Route::put('/dashboard/articles/update', [ArticleController::class, 'update']);
+Route::get('/dashboard/articles/report', [ArticleController::class, 'report']);

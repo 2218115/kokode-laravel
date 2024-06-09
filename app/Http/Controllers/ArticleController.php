@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Category;
 
-
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ArticleController extends Controller
 {
@@ -57,5 +57,15 @@ class ArticleController extends Controller
         return redirect('/dashboard/articles');
     }
 
+    public function report() {
+        $articles = Article::all();
 
+        $pdf = Pdf::loadView('dashboard.article.pdf', [
+            'articles' => $articles,
+        ]);
+
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->download('laporan-artikel.pdf');        
+    }
 }
